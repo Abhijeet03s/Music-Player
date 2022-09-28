@@ -9,7 +9,8 @@ let prev = document.getElementById("prev")
 let next = document.getElementById("next")
 let restart = document.getElementById("restart")
 let audio = document.getElementById("audio-source")
-
+let volume = document.querySelector(".vol-slider");
+let vol = document.querySelector(".vol")
 
 const trackList = [
     {
@@ -35,12 +36,11 @@ const trackList = [
     }
 ]
 
-let songIndex = 0;
-
+let songIndex = Math.floor(Math.random() * trackList.length);
 
 loadSong(trackList[songIndex]);
 
-function loadSong(trackList) {    
+function loadSong(trackList) {
     songName.innerText = trackList.name;
     artistName.innerText = trackList.artist;
     audio.src = trackList.path;
@@ -96,3 +96,7 @@ function shuffSong() {
     // playSong();
     audio.play();
 }
+
+volume.addEventListener('change', () => {
+    audio.volume = volume.value;
+})
