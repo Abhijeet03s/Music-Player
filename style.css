@@ -103,3 +103,20 @@ body {
 .restart {
   font-size: 30px;
 }
+
+.pro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.progress {
+  width: 85%;
+}
+.progress::-webkit-slider-runnable-track {
+  height: 1rem;
+  background-color: #c2c2c2;
+  border-radius: 2rem;
+}
+.progress::-webkit-slider-thumb {
+  width: 2rem;
+}
