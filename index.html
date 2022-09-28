@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="./images/hey.jpg">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <title>Music Player</title>
+    </head>
+
+    <body>
+        <div class="container" id="player">
+            <div class="names" id="name">
+                <h1 class="song-name" id="song-name">Fly-High</h1>
+                <h3 class="artist-name" id="artist-name">Burnout Syndromes</h3>
+                <audio src="" id="audio-source"></audio>
+            </div>
+            <div class="controls" id="controls">
+                <button id="shuffle" class="btn shuffle"><i class="fa-solid fa-shuffle"></i></button>
+                <button id="prev" class="btn prev back"><i class="fa-solid fa-backward"></i></button>
+                <button id="play" class="btn play"><i class="fa-solid fa-play"></i></button>
+                <button id="next" class="btn next back"><i class="fa-solid fa-forward"></i></button>
+                <button id="restart" class="btn restart"><i class="fa-solid fa-arrow-rotate-forward"></i></button>
+            </div>
+        </div>
+        <script src="./app.js"></script>
+    </body>
+
+</html>

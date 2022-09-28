@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background: radial-gradient(ellipse at center, #ffc200 0%, #e0ad00 100%); */
+  /* background-color: #ffeff5; */
+  /* background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%); */
+  max-width: 23rem;
+  margin: 0 auto;
+  font-family: "Aref Ruqaa Ink", serif;
+  background-image: linear-gradient(
+    to right,
+    #ff8177 0%,
+    #ff867a 0%,
+    #ff8c7f 21%,
+    #f99185 52%,
+    #cf556c 78%,
+    #b12a5b 100%
+  );
+  color: #fff;
+}
+
+.container {
+  box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 0.4),
+    0 50px 45px -20px rgba(0, 0, 0, 0.2);
+  background: #cccccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  border-radius: 30px;
+  background-image: url("./alexander-shatov-qt7S2QuAhJI-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.song-name {
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.artist-name {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0.7;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  bottom: 0;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+  height: 80px;
+}
+
+.btn {
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+}
+
+.play:hover,
+.next:hover,
+.prev:hover {
+  transform: scale(0.9);
+}
+
+.shuffle {
+  font-size: 30px;
+}
+
+.play {
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.restart {
+  font-size: 30px;
+}
