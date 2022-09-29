@@ -11,7 +11,8 @@ let restart = document.getElementById("restart")
 let audio = document.getElementById("audio-source")
 let volume = document.querySelector(".vol-slider");
 let vol = document.querySelector(".vol")
-let progress = document.querySelector('.progress');
+let progress = document.querySelector(".progress")
+let span = document.querySelector("span")
 
 const trackList = [
     {
@@ -99,9 +100,10 @@ function shuffSong() {
 }
 
 // volume slider
-volume.addEventListener('change', () => {
-    audio.volume = volume.value;
+volume.addEventListener('change', () => {    
+    audio.volume = volume.value
 })
+
 
 //progress slider
 progress.addEventListener('change', () => {
@@ -112,5 +114,5 @@ audio.addEventListener('timeupdate', () => {
     progress.value = audio.currentTime * 100 / audio.duration;
     let s = parseInt(audio.currentTime % 60);
     let m = parseInt((audio.currentTime / 60) % 60);
-    span.textContent = ((m < 10) ? '0' + m : m) + ':' + ((s < 10) ? '0' + s : s);
+    span.innerHTML = ((m < 10) ? '0' + m : m) + ':' + ((s < 10) ? '0' + s : s);
 })
