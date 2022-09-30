@@ -18,25 +18,24 @@
                 <h1 class="song-name" id="song-name"></h1>
                 <h3 class="artist-name" id="artist-name"></h3>
                 <audio src="" id="audio-source"></audio>
-                <img class="song-image" src="./images/summer.jpg" alt="Song Image" />
+                <img class="song-image" src="./image/summer.jpg" alt="song-img" />
             </div>
             <div class="pro">
-                <!-- <span></span> -->
-                <p class="current-time">00:00</p>
+                <p class="current-time"></p>
                 <input type="range" min="0" max="100" value="0" class="progress" id="progress-slider" />
-                <p class="total-time">00:00</p>
+                <p class="total-time"></p>
             </div>
             <div class="controls" id="controls">
-                <button id="shuffle" class="btn shuffle"><i class="fa-solid fa-shuffle"></i></button>
+                <button id="shuffle" class="btn shuffle"><i class="bx bx-shuffle"></i></button>
                 <button id="prev" class="btn prev back"><i class="fa-solid fa-backward"></i></button>
                 <button id="play" class="btn play"><i class="fa-solid fa-play"></i></button>
                 <button id="next" class="btn next back"><i class="fa-solid fa-forward"></i></button>
                 <div class="vol">
                     <div class="vol-icon">
-                        <i class="bx bxs-volume-full"></i>
+                        <i class="bx bx-volume-low"></i>
                     </div>
                     <div class="vol-hidden">
-                        <input type="range" min="0" max="100" value="50" step="10" class="vol-slider" id="slider" />
+                        <input type="range" min="0" max="100" value="30" step="10" class="vol-slider" id="slider" />
                     </div>
                 </div>
             </div>

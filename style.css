@@ -56,7 +56,7 @@ body {
 }
 
 .song-image {
-  margin-top: 5px;
+  margin-top: 10px;
   border-radius: 7px;
 }
 
@@ -145,7 +145,6 @@ body {
   background-color: #6b6bf3;
 }
 
-
 .vol {
   position: relative;
   display: flex;
@@ -153,15 +152,19 @@ body {
   align-items: center;
 }
 
-.vol-icon{
+.vol-icon {
   font-size: 30px;
 }
 
-.vol-hidden  {
+.vol-hidden {
   display: none;
+}
+
+.vol-slider {
   position: absolute;
-  content: " ";
-  top: -60px;
+  content: "";
+  left: -51px;
+  top: -65px;
   transform: rotate(270deg);
 }
 
@@ -188,20 +191,3 @@ body {
   cursor: pointer;
   border-radius: 100%;
 }
-
-/* .vol-slider {
-  width: 10px;
-  display: none;
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
-
-.vol-icon {
-  font-size: 30px;
-} */
-
-/* .vol:hover .vol-slider {
-  display: block;
-  right: 4px;
-} */

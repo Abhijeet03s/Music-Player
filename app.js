@@ -1,7 +1,11 @@
-let player = document.getElementById("player")
+// song-artist name
 let name = document.getElementById("name")
 let songName = document.getElementById("song-name")
 let artistName = document.getElementById("artist-name")
+let songImage = document.querySelector(".song-image")
+
+//controls buttons
+let player = document.getElementById("player")
 let control = document.getElementById("controls")
 let shuffle = document.getElementById("shuffle")
 let play = document.getElementById("play")
@@ -9,39 +13,37 @@ let prev = document.getElementById("prev")
 let next = document.getElementById("next")
 let audio = document.getElementById("audio-source")
 
-let span = document.querySelector("span")
-
+// progress slider
 let progress = document.querySelector(".progress")
 let currTime = document.querySelector(".current-time");
 let totalTime = document.querySelector(".total-time");
 
-// let volume = document.querySelector(".vol-slider");
-// let vol = document.querySelector(".vol")
+// volume buttons
+let volume = document.querySelector(".vol");
 let volumeIcon = document.querySelector(".vol-icon");
 let volumeSlider = document.querySelector(".vol-slider");
-let volumeContainer = document.querySelector(".vol");
-let volumeRange = document.querySelector(".vol-hidden");
+let volumeHidden = document.querySelector(".vol-hidden");
 
 const trackList = [
     {
         id: 1,
         name: "Baarishein",
         artist: "Anuv Jain",
-        image: "./images/hey.jpg",
+        image: "./image/hey.jpg",
         path: "./music/Baarishein.mp3"
     },
     {
         id: 2,
         name: "Aaoge Tum Kabhi",
         artist: "The Local Train",
-        image: "./images/summer.jpg",
+        image: "./image/summer.jpg",
         path: "./music/Aaoge Tum Kabhi.mp3"
     },
     {
         id: 3,
         name: "Ranjha",
         artist: "Shershaah",
-        image: "./images/ukulele.jpg",
+        image: "./image/ukulele.jpg",
         path: "./music/Ranjha.mp3",
     }
 ]
@@ -51,10 +53,9 @@ let isPlaying = false;
 let setPosition;
 let updateTimer;
 
-let volumeIntail = 0;
-let volumeIncrease, volumeDecrease;
 
 
+// load songs
 loadSong(trackList[songIndex]);
 
 function loadSong(trackList) {
@@ -63,11 +64,14 @@ function loadSong(trackList) {
     audio.load();
     songName.innerText = trackList.name;
     artistName.innerText = trackList.artist;
+    songImage.src = trackList[songIndex].image;
     audio.src = trackList.path;
     updateTimer = setInterval(setUpdate, 1000);
     audio.addEventListener("ended", nextSong);
 }
 
+
+// reset progress timer
 function resetTime() {
     currTime.innerText = "00:00";
     totalTime.innerText = "00:00";
@@ -78,6 +82,7 @@ function resetTime() {
 function playPauseSong() {
     isPlaying ? pauseSong() : playSong();
 }
+
 
 
 // play song
@@ -91,12 +96,14 @@ function playSong() {
 }
 
 
+
 // pause song
 function pauseSong() {
     audio.pause();
     isPlaying = false;
     play.innerHTML = ' <i class="fa-solid fa-play"></i>';
 }
+
 
 
 // next song
@@ -112,6 +119,7 @@ function nextSong() {
 }
 
 
+
 // previous song
 prev.addEventListener("click", prevSong);
 
@@ -124,6 +132,8 @@ function prevSong() {
     playSong();
 }
 
+
+
 // shuffle song
 shuffle.addEventListener("click", shuffSong)
 
@@ -134,29 +144,26 @@ function shuffSong() {
 }
 
 
-volumeContainer.addEventListener("click", toggleVolume);
+
+// volume icon
+volume.addEventListener("click", toggleVolume);
+
 function toggleVolume() {
-    volumeRange.classList.toggle("hidden");
+    volumeHidden.classList.toggle("vol-hidden");
 }
 
 
+
+// volume icon
 volumeSlider.addEventListener("change", calcSongVolume);
+
 function calcSongVolume() {
     let audioVolume = audio.value = volumeSlider.value / 100;
     audio.volume = volumeSlider.value / 100;
-    if (audioVolume > 0.4) {
-        volumeIcon.innerHTML = '<i class="fa fa-volume-up"></i>';
-    } else if (audioVolume < 0.2) {
-        volumeIcon.innerHTML = '<i class="fa fa-volume-down"></i>'
+    if (audioVolume > 0.7) {
+        volumeIcon.innerHTML = '<i class="bx bx-volume-full"></i>';
     }
 }
-
-
-
-// // volume slider
-// volume.addEventListener('change', () => {
-//     audio.volume = volume.value
-// })
 
 
 
@@ -191,8 +198,6 @@ function setUpdate() {
         }
         currTime.innerText = currentMinutes + ":" + currentSeconds;
         totalTime.innerText = durationMinutes + ":" + durationSeconds;
-
-
     }
 }
 
