@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
   margin: 0;
@@ -7,19 +8,7 @@
 }
 
 body {
-  /* background: radial-gradient(ellipse at center, #ffc200 0%, #e0ad00 100%); */
-  /* background-color: #ffeff5; */
-  /* background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%); */
-  /* background-image: linear-gradient(
-    to right,
-    #ff8177 0%,
-    #ff867a 0%,
-    #ff8c7f 21%,
-    #f99185 52%,
-    #cf556c 78%,
-    #b12a5b 100%
-  ); */
-  max-width: 23rem;
+  max-width: 24rem;
   margin: 0 auto;
   font-family: "Aref Ruqaa Ink", serif;
   background-color: #003c7d;
@@ -36,11 +25,13 @@ body {
   justify-content: center;
   margin-top: 150px;
   border-radius: 30px;
-  background-image: url("./bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #0b1936;
+  /* background-image: url("./images/bg.jpg"); */
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
   position: relative;
+  height: 450px;
 }
 
 .names {
@@ -48,13 +39,13 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 300px;
+  height: 500px;
   width: 100%;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 .song-name {
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 30px;
   font-weight: 700;
 }
@@ -62,6 +53,11 @@ body {
 .artist-name {
   font-size: 20px;
   font-weight: 400;
+}
+
+.song-image {
+  margin-top: 5px;
+  border-radius: 7px;
 }
 
 .controls {
@@ -73,9 +69,10 @@ body {
   opacity: 0.7;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  bottom: 0;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
-  height: 80px;
+  position: absolute;
+  bottom: 0px;
+  height: 70px;
 }
 
 .btn {
@@ -106,14 +103,24 @@ body {
 }
 
 .pro {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  top: 345px;
+  width: 70%;
 }
 
 .progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
   width: 100%;
-  height: 12px;
+  /* height: 15px; */
   border: 0;
   border-radius: 10px;
   cursor: pointer;
@@ -137,44 +144,64 @@ body {
   border-radius: 10px;
   background-color: #6b6bf3;
 }
-/* .progress {
-  width: 85%;
-}
 
-.progress::-webkit-slider-runnable-track {
-  height: 1rem;
-  background-color: #c2c2c2;
-  border-radius: 2rem;
-}
-.progress::-webkit-slider-thumb {
-  width: 2rem;
-} */
 
 .vol {
-  padding: 2px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vol-icon{
+  font-size: 30px;
+}
+
+.vol-hidden  {
+  display: none;
   position: absolute;
-  right: 3px;
-  top: 10px;
+  content: " ";
+  top: -60px;
+  transform: rotate(270deg);
 }
 
-.volume-up {
-  width: 25px;
-  margin-right: 1%;
+.vol-slider,
+.progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: linear-gradient(to left, #d946ef, #8b5cf6);
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
-.vol-slider {
+.vol-slider::-webkit-slider-thumb,
+.progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #8b5cf6;
+  border: 3px solid white;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+/* .vol-slider {
+  width: 10px;
+  display: none;
   position: absolute;
   top: 5px;
   right: 10px;
-  z-index: 99;
-  display: none;
 }
 
-.vol:hover .vol-slider {
+.vol-icon {
+  font-size: 30px;
+} */
+
+/* .vol:hover .vol-slider {
   display: block;
   right: 4px;
-}
-
-.vol:hover {
-  width: 30%;
-}
+} */
