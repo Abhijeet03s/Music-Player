@@ -11,7 +11,7 @@ let shuffle = document.getElementById("shuffle")
 let play = document.getElementById("play")
 let prev = document.getElementById("prev")
 let next = document.getElementById("next")
-let audio = document.getElementById("audio-source")
+let audio = document.querySelector(".audio-source")
 
 // progress slider
 let progress = document.querySelector(".progress")
@@ -29,21 +29,21 @@ const trackList = [
         id: 1,
         name: "Baarishein",
         artist: "Anuv Jain",
-        image: "./image/hey.jpg",
+        image: "./image/baarishein.jpg",
         path: "./music/Baarishein.mp3"
     },
     {
         id: 2,
         name: "Aaoge Tum Kabhi",
         artist: "The Local Train",
-        image: "./image/summer.jpg",
+        image: "./image/the local train.jpg",
         path: "./music/Aaoge Tum Kabhi.mp3"
     },
     {
         id: 3,
         name: "Ranjha",
         artist: "Shershaah",
-        image: "./image/ukulele.jpg",
+        image: "./image/shershaah.jpg",
         path: "./music/Ranjha.mp3",
     }
 ]
@@ -64,7 +64,7 @@ function loadSong(trackList) {
     audio.load();
     songName.innerText = trackList.name;
     artistName.innerText = trackList.artist;
-    songImage.src = trackList[songIndex].image;
+    // songImage.src = trackList.image;
     audio.src = trackList.path;
     updateTimer = setInterval(setUpdate, 1000);
     audio.addEventListener("ended", nextSong);
